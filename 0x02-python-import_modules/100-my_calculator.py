@@ -22,5 +22,3 @@ if __name__ == "__main__":
     elif sys.argv[2] == '/':
         result = div(a, b)
     print("{} {} {} = {}".format(a, sys.argv[2], b, result))
-
-
