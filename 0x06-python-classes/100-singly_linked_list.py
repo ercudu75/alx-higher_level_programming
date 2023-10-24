@@ -3,6 +3,8 @@
 
 
 class Node:
+    """Representation of a list node"""
+
     def __init__(self, data, next_node=None):
         """Node of our linked list"""
         self.__data = data
@@ -36,6 +38,8 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Representation of a singly linked list"""
+
     count = 0
 
     def __init__(self):
