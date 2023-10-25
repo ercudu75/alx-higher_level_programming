@@ -58,17 +58,15 @@ class Square:
         return self.__size ** 2
 
     def __str__(self):
-        """returns a string of user friendly printable"""
-        string = ""
-        if self.__size == 0:
-            string += '\n'
-            return
-        for i in range(self.__position[1]):
-            string += '\n'
-        for i in range(self.__size):
+        """Define the print() representation of a Square."""
+        if self.__size != 0:
+            for i in range(self.__position[1]):
+                print("")
+        for i in range(0, self.__size):
             for space in range(self.__position[0]):
-                string += ' '
+                print(" ", end="")
             for column in range(self.__size):
-                string += '#'
-            string += '\n'
-        return string
+                print("#", end="")
+            if i != self.__size - 1:
+                print("")
+        return ("")
