@@ -1,48 +1,41 @@
 #!/usr/bin/python3
-matrix_divided = __import__('2-matrix_divided').matrix_divided
+say_my_name = __import__('3-say_my_name').say_my_name
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-print(matrix_divided(matrix, 3))
-# General Cases)
-
-# Edge Cases
+# General Cases
 try:
-    print(matrix_divided([[1]], 1))  # Single element, should return [[1.0]]
+    say_my_name("John", "Smith")  # Should print: "My name is John Smith"
 except Exception as e:
     print(e)
 
 try:
-    print(matrix_divided([], 1))  # Empty matrix, should return []
+    say_my_name("Bob")  # Should print: "My name is Bob "
+except Exception as e:
+    print(e)
+
+# Edge Cases
+try:
+    say_my_name("", "")  # Should print: "My name is  "
 except Exception as e:
     print(e)
 
 # Type Errors
 try:
-    print(matrix_divided("Not a matrix", 2))  # Not a list of lists, should raise TypeError
+    say_my_name(12, "White")  # first_name is not a string, should raise TypeError
 except Exception as e:
     print(e)
 
 try:
-    print(matrix_divided([[1, 2], [3, '4']], 2))  # Element is not a number, should raise TypeError
+    say_my_name("John", 12)  # last_name is not a string, should raise TypeError
 except Exception as e:
     print(e)
 
 try:
-    print(matrix_divided([[1, 2], [3, 4]], '2'))  # Divisor is not a number, should raise TypeError
+    say_my_name(12, 12)  # Both first_name and last_name are not strings, should raise TypeError
 except Exception as e:
     print(e)
 
-# Zero Division Errors
 try:
-    print(matrix_divided([[1, 2], [3, 4]], 0))  # Divisor is zero, should raise ZeroDivisionError
+    say_my_name(None, "White")  # first_name is None, should raise TypeError
 except Exception as e:
     print(e)
 
-# Rows of Different Sizes
-try:
-    print(matrix_divided([[1, 2], [3, 4, 5]], 2))  # Rows have different sizes, should raise TypeError
-except Exception as e:
-    print(e)
