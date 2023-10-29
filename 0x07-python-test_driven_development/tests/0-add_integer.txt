@@ -52,3 +52,8 @@ OverflowError: cannot convert float infinity to integer
 >>> add_integer(float("inf"))
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(1e300**2, 1e300000)
+./0-main.py
+Traceback (most recent call last):
+OverflowError: (34, 'Numerical result out of range')
