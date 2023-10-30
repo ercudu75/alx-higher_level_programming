@@ -1,65 +1,12 @@
 #!/usr/bin/python3
-print_square = __import__('4-print_square').print_square
+text_indentation = __import__('5-text_indentation').text_indentation
 
-# General Cases
-try:
-    print_square(4)  # Should print a 4x4 square of '#'
-    print("---")  # Separator for better visual distinction
-except Exception as e:
-    print(e)
-
-try:
-    print_square(10)  # Should print a 10x10 square of '#'
-    print("---")
-except Exception as e:
-    print(e)
-
-# Edge Cases
-try:
-    print_square(0)  # Should not print anything
-    print("---")
-except Exception as e:
-    print(e)
-
-try:
-    print_square(1)  # Should print a single '#'
-    print("---")
-except Exception as e:
-    print(e)
-
-# Type Errors
-try:
-    print_square(-1)  # size is negative, should raise ValueError
-    print("---")
-except Exception as e:
-    print(e)
-
-try:
-    print_square("4")  # size is a string, should raise TypeError
-    print("---")
-except Exception as e:
-    print(e)
-
-try:
-    print_square(None)  # size is None, should raise TypeError
-    print("---")
-except Exception as e:
-    print(e)
-
-try:
-    print_square(4.0)  # size is a positive float, should raise TypeError
-    print("---")
-except Exception as e:
-    print(e)
-
-try:
-    print_square(-4.0)  # size is a negative float, should raise TypeError
-    print("---")
-except Exception as e:
-    print(e)
-
-try:
-    print_square(True)  # size is a boolean, should raise TypeError
-    print("---")
-except Exception as e:
-    print(e)
+text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+beatiorem! Iam ruinas videres""")
