@@ -30,3 +30,8 @@ class Base:
                 list_dict.append(obj.to_dictionary())
         with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(list_dict))
+
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        return json.loads(json_string)
