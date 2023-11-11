@@ -7,13 +7,7 @@ class Rectangle(Base):
     """"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-            constructor for the class Rectangle
-            and we call method form another class
-            we use super and pass the id The goal of it is
-            to manage id attribute in all our future classes
-            avoid duplicating the same code
-            """
+        """add some raise error in the constructor"""
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -38,16 +32,32 @@ class Rectangle(Base):
 
     @get_width.setter
     def setter_width(self, width):
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @get_height.setter
     def setter_height(self, height):
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @get_x.setter
     def setter_x(self, x):
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @get_y.setter
     def setter_y(self, y):
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
