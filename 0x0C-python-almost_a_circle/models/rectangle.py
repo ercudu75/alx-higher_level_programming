@@ -54,7 +54,6 @@ class Rectangle(Base):
     def y(self):
         return self.__y
 
-
     @y.setter
     def y(self, y):
         if type(y) is not int:
@@ -71,3 +70,8 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end='')
             print()
+
+    def __str__(self):
+        return (f"[Rectangle] ({self.id}) "
+                f"{self.x}/{self.y} - "
+                f"{self.width}/{self.height}")
