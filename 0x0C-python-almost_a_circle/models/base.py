@@ -43,3 +43,14 @@ class Base:
         if dummy is not None:
             dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
+                json_data = f.read()
+        except FileNotFoundError:
+            return []
+        list_dict = cls.from_json_string(json_data)
+        list_instances = [cls.create(**d) for d in list_dict]
+        return list_instances
