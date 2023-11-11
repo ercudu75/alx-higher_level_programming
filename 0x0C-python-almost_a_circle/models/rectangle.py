@@ -66,7 +66,16 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        """
+            x represent number of spaces
+            and y represent number of lines
+            """
+        i = 0
+        for i in range(self.y):
+            print()
         for i in range(self.height):
+            for k in range(self.x):
+                print(' ', end='')
             for j in range(self.width):
                 print("#", end='')
             print()
