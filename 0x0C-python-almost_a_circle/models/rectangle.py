@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Class Rectangle"""
+
 from .base import Base
 
 
 class Rectangle(Base):
-    """"""
+    """Representation of a Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """add some raise error in the methods"""
@@ -16,10 +17,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width getter method"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """width setter method"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -28,10 +31,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """height getter method"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """height setter method"""
         if type(height) is not int:
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -40,10 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x getter method"""
         return self.__x
 
     @x.setter
     def x(self, x):
+        """x setter method"""
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -52,10 +59,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y getter method"""
         return self.__y
 
     @y.setter
     def y(self, y):
+        """y setter method"""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -63,6 +72,7 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """area of rectangle"""
         return self.width * self.height
 
     def display(self):
@@ -81,11 +91,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """custom __str__ method for Rectangle"""
         return (f"[Rectangle] ({self.id}) "
                 f"{self.x}/{self.y} - "
                 f"{self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
+        """updates values of the Rectangle instance from args or kwargs"""
         if args and len(args > 0):
             if len(args) > 0:
                 self.id = args[0]
@@ -115,6 +127,7 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
+        """returns the dictionary representation of the Rectangle instance"""
         return {
                 "id": self.id,
                 "size": self.width,
