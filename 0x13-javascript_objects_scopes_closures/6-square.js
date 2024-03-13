@@ -4,13 +4,13 @@ const Rectangle = require('./4-rectangle.js');
 class Square extends Rectangle {
   constructor (size) {
     super(size, size);
-    this.size = size;
   }
+
   charPrint (c) {
     if (typeof c === 'undefined') {
-      c = 'X'
+      c = 'X';
     }
-      this.print(c);
+    this.print(c);
   }
 }
 module.exports = Square;
