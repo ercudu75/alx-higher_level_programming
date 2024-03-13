@@ -1,7 +1,6 @@
 #!/usr/bin/node
-const Square = require('./5-square');
+const logMe = require('./9-logme').logMe;
 
-const s1 = new Square(4);
-s1.print();
-s1.double();
-s1.print();
+logMe('Hello');
+logMe('Best');
+logMe('School');
