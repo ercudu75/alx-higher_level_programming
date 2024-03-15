@@ -3,7 +3,7 @@ import MySQLdb
 from sys import argv, exit
 
 
-try:
+if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=argv[1], passwd=argv[2], db=argv[3])
 
@@ -19,8 +19,4 @@ try:
 
     print(cities)
     cur.close()
-except MySQLdb.Error as e:
-    print("MySQL Error:", e)
-    exit(1)
-
-db.close()
+    db.close()
