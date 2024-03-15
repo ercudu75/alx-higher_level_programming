@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""name of a state as an argument and lists
+all cities of that state"""
+
+
 import MySQLdb
 from sys import argv, exit
-
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306,
