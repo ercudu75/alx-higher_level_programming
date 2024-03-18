@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """script to list all state objects using sqlalchemy
 """
 from model_state import Base, State
@@ -9,7 +8,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
 
 import sys
-
 
 if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
